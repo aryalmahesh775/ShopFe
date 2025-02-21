@@ -1,0 +1,13 @@
+@import "tailwindcss";
+/* prefix(tw);  if want to add prefix for tailwind while using other ui options like daisy ui */
+
+@theme {
+  --color-rabbit-red:#ea2e0e;
+  /* --color-orange-500:#1DA1FA    if want to overide the options given by tailwind */
+}
+
+#root{
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
