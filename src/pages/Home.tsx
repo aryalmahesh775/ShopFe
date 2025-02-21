@@ -1,9 +1,14 @@
+import Hero from "../components/Layout/Hero"
+import GenderCollectionSection from "../components/Products/GenderCollectionSection"
+import NewArrivels from "../components/Products/NewArrivels"
 
 
 const Home = () => {
   return (
     <div>
-      Home
+      <Hero /> 
+      <GenderCollectionSection />
+      <NewArrivels />
     </div>
   )
 }
