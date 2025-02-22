@@ -1,14 +1,15 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import login from "../assets/login.webp";
+import register from "../assets/register.webp";
 
-function Login() {
+function Register() {
+  const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("User Login", {  email, password });
+    console.log("User Registered", { name, email, password });
   };
 
   return (
@@ -25,6 +26,18 @@ function Login() {
           <p className="text-center mb-6">
             Enter your username and password to login
           </p>
+          <div className="mb-4">
+            <label htmlFor="" className="block text-sm font-semibold mb-2">
+              Name
+            </label>
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Enter your name"
+              className="w-full p-2 border rounded"
+            />
+          </div>
           <div className="mb-4">
             <label htmlFor="" className="block text-sm font-semibold mb-2">
               Email
@@ -53,12 +66,12 @@ function Login() {
             type="submit"
             className="w-full bg-black text-white p-2 rounded-lg font-semibold hover:bg-gray-800 transition"
           >
-            Sign In
+            Sign Up
           </button>
           <p className="mt-6 text-center text-sm">
-            Don't have an acccount?
-            <Link to="/register" className="text-blue-500 ml-2">
-              Register
+            Already have an acccount?
+            <Link to="/login" className="text-blue-500 ml-2">
+              Login
             </Link>
           </p>
         </form>
@@ -66,11 +79,11 @@ function Login() {
 
       <div className="hidden md:block w-1/2 bg-gray-800">
         <div className="h-full flex flex-col justify-center items-center">
-            <img src={login} alt="Login to account" className="h-[750px] w-full object-cover" />
+            <img src={register} alt="Login to account" className="h-[750px] w-full object-cover" />
         </div>
       </div>
     </div>
   );
 }
 
-export default Login;
+export default Register;
