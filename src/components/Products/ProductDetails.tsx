@@ -72,7 +72,7 @@ const similarProducts = [
 ];
 
 const ProductDetails = () => {
-  const [mainImage, setMainImage] = useState<string>("");
+  const [mainImage, setMainImage] = useState<string | null>("");
   const [selectedSize, setSelectedSize] = useState<string>("");
   const [selectedColor, setSelectedColor] = useState<string>("");
   const [quantity, setQuantity] = useState<number>(1);
@@ -133,7 +133,7 @@ const ProductDetails = () => {
           <div className="md:w-1/2">
             <div className="mb-4">
               <img
-                src={mainImage}
+                src={mainImage ? mainImage : ""}
                 alt="main product"
                 className="w-full h-auto object-cover rounded-lg"
               />
