@@ -3,7 +3,9 @@ import { useSearchParams } from "react-router-dom";
 const SortOptions = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const handleSortChange = (e) => {
+  interface SortChangeEvent extends React.ChangeEvent<HTMLSelectElement> {}
+
+  const handleSortChange = (e: SortChangeEvent) => {
     const sortBy = e.target.value;
     searchParams.set("sortBy", sortBy);
     setSearchParams(searchParams);
