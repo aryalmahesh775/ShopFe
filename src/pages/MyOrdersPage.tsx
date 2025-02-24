@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface ordersInterface {
   _id: string;
@@ -11,6 +12,7 @@ interface ordersInterface {
 
 const MyOrdersPage = () => {
   const [orders, setOrders] = useState<ordersInterface[]>([]);
+  const navigate = useNavigate()
 
   useEffect(() => {
     setTimeout(() => {
@@ -47,7 +49,9 @@ const MyOrdersPage = () => {
     }, 1000);
   }, []);
 
-  console.log(orders);
+  const handleRowClick = (orderId:string|number) => {
+    navigate(`/order/${orderId}`)
+  }
   return (
     <div className="max-w-7xl ax-auto p-4 sm:p-6">
       <h2 className="text-xl sm:text-2xl font-bold mb-6">My Orders</h2>
@@ -69,6 +73,7 @@ const MyOrdersPage = () => {
               orders.map((order: ordersInterface) => (
                 <tr
                   key={order._id}
+                  onClick={() => handleRowClick(order._id)}
                   className="border-b hover:border-gray-50 cursor-pointer"
                 >
                   <td className="py-2 px-2 sm:py-4 sm:px-4">
