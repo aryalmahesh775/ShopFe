@@ -1,7 +1,21 @@
 import { useState } from "react";
 
 const EditProductPage = () => {
-  const [productData, setProductData] = useState({
+  const [productData, setProductData] = useState<{
+    name: string;
+    description: string;
+    price: number;
+    countInStock: number;
+    sku: string;
+    category: string;
+    brand: string;
+    sizes: string[]; // Explicitly define as string array
+    colors: string[]; // Explicitly define as string array
+    collections: string;
+    material: string;
+    gender: string;
+    images: { url: string; altText: string }[];
+  }>({
     name: "",
     description: "",
     price: 0,
@@ -36,7 +50,7 @@ const EditProductPage = () => {
     console.log(file);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e:any) => {
     e.preventDefault();
     console.log(productData)
   }
