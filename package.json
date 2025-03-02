@@ -1,5 +1,5 @@
 {
-  "homepage": "http://aryalmahesh775.github.io/ShopFe",
+  "homepage": "https://aryalmahesh775.github.io/ShopFe/",
   "name": "frontend",
   "private": true,
   "version": "0.0.0",
@@ -9,8 +9,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run dev",
-    "deploy": "gh-pages -d build"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@paypal/react-paypal-js": "^8.8.2",
