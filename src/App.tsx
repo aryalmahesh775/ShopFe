@@ -21,6 +21,7 @@ import OrderManagement from "./components/Admin/OrderManagement"
 function App() {
 
   return (
+    // <BrowserRouter basename="/ShopFe" >
     <BrowserRouter >
     <Toaster position="top-right" />
     <Routes>
